@@ -2,14 +2,14 @@
 //  ViewController.swift
 //  TTP
 //
-//  Created by Ivan Aldama on 08/03/18.
-//  Copyright © 2018 Ivan Aldama. All rights reserved.
+//  Created by Shadow on 08/03/18.
+//  Copyright © 2018 Shadow. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
-
+//Conexion de botones, segun el atributo de cada uno (Tijeras, Papel, Piedra)
     @IBAction func Papel(_ sender: UIButton) {
     }
     @IBAction func Tijeras(_ sender: UIButton) {
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+    //Seleccion de objeto por el jugador.
          let newView = segue.destination as! RestultsController
     
         switch segue.identifier {

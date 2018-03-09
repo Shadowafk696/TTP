@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  TTP
 //
-//  Created by Ivan Aldama on 08/03/18.
-//  Copyright © 2018 Ivan Aldama. All rights reserved.
+//  Created by Shadow on 08/03/18.
+//  Copyright © 2018 Shadow. All rights reserved.
 //
 
 import UIKit

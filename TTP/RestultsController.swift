@@ -2,8 +2,8 @@
 //  RestultsController.swift
 //  TTP
 //
-//  Created by Ivan Aldama on 08/03/18.
-//  Copyright © 2018 Ivan Aldama. All rights reserved.
+//  Created by Shadow on 08/03/18.
+//  Copyright © 2018 Shadow. All rights reserved.
 //
 
 import UIKit
@@ -12,7 +12,7 @@ class RestultsController: UIViewController {
 
     open var playerChoo:String = ""
     var playerFinalOption:Int = -1
-    
+    //Conexion de imagen, y label, que otorgaran una vision de resultado a la eleccion del jugador.
     @IBOutlet weak var imageWinner: UIImageView!
     @IBOutlet weak var resultWinner: UILabel!
     override func viewDidLoad() {
@@ -22,7 +22,7 @@ class RestultsController: UIViewController {
         // Do any additional setup after loading the view.
         
     }
-
+//Comparacion de objetos, y seleccion de imagen localizada sobre los assets, y el uso de random.
     func chooseChild() -> Void {
         let randNum = Int(arc4random_uniform(3))
         print("El numero del robot es \(randNum)")
@@ -34,13 +34,22 @@ class RestultsController: UIViewController {
                 self.resultWinner.text = "TIJERAS LE GANA A PAPEL"
             }else if playerFinalOption == 1 && randNum == 0 {
                 print("ganaste")
+                self.resultWinner.text = "PIEDRA LE GANA A TIJERAS"
+                self.imageWinner.image = UIImage(named: "rock")
             }else if playerFinalOption == 2 && randNum == 1 {
                 print("ganaste")
+                self.imageWinner.image = UIImage(named: "paper")
+                self.resultWinner.text = "PAPEL LE GANA A PIEDRA"
             } else {
                 print("perdiste")
+                self.imageWinner.image = UIImage(named: "loser")
+                self.resultWinner.text = "FATAL ERROR D:"
             }
         } else {
             print("empate")
+            self.imageWinner.image = UIImage(named: "draw")
+            self.resultWinner.text = "DRAW"
+            
         }
     }
     
@@ -52,9 +61,6 @@ class RestultsController: UIViewController {
         } else {
             playerFinalOption = 2
         }
-    }
-    func changeUI() -> Void {
-        print("tu")
     }
     
     override func didReceiveMemoryWarning() {
